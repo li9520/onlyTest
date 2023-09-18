@@ -1,0 +1,49 @@
+@import 'src/styles/variables.scss';
+
+@mixin activeEl {
+
+  background-color: rgba(244, 245, 249, 1);
+  border: 1px solid rgba(48, 62, 88, 0.5);
+
+
+.curcleButton__content {
+    background-color: transparent;
+    height: auto;
+    width: auto;
+
+    p{
+      display: block;
+    }
+  }
+}
+.curcleButton {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+  width: $element-size;
+  height: $element-size;
+  box-sizing: border-box;
+  border-radius: 50%;
+  position: absolute;
+  overflow-x: hidden;
+  left: 0;
+  top: 50%;
+
+  &__content {
+    background-color: rgba(66, 86, 122, 1);
+    height: $point-size;
+    width: $point-size;
+    border-radius: 50%;
+
+    p{
+      display: none;
+    }
+  }
+
+  &:hover, &.active {
+    @include activeEl();
+  }
+}

@@ -1,5 +1,5 @@
 {
-  "compilerOptions": {
+	"compilerOptions": {
 		//Не создавать выходные файлы компилятора, например исходный код JavaScript. Для нас это делает Babel.
 		"noEmit": true,
 		//Разрешите импорт файлов .js, а не только файлы .ts и .tsx.
@@ -13,22 +13,35 @@
 		"module": "es6",
 		"target": "es6",
 		"moduleResolution": "node",
-    "jsx": "react",
+		"jsx": "react",
 		"esModuleInterop": true,
 		"allowSyntheticDefaultImports": true,
 		"baseUrl": ".",
 		"paths": {
-			"components/*": ["src/components/*"],
-			"projectTypes/*": ["src/projectTypes/*"],
-			"styles/*": ["src/styles/*"],
-			"utils/*": ["src/utils/*"],
-			"store/*": ["src/store/*"],
-			"pages/*": ["src/App/pages/*"],
-			"src/*": ["src/*"],
-			"appComponents/*": ["src/App/components/*"]
+			"components/*": [
+				"src/components/*"
+			],
+			"projectTypes/*": [
+				"src/projectTypes/*"
+			],
+			"styles/*": [
+				"src/styles/*"
+			],
+			"utils/*": [
+				"src/hooks/*"
+			],
+			"src/*": [
+				"src/*"
+			],
+			"appComponents/*": [
+				"src/App/components/*"
+			]
 		}
-  },
- 
-  "include": ["src/**/*"], // какие файлы включены в проверку
-  "exclude": ["node_modules"], // какие файлы исключены
+	},
+	"include": [
+		"src/**/*"
+	], // какие файлы включены в проверку
+	"exclude": [
+		"node_modules"
+	], // какие файлы исключены
 }

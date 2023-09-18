@@ -96,6 +96,7 @@ module.exports = {
     alias: {
       components: path.join(srcPath, 'components'),
       src: srcPath,
+      utils: path.join(srcPath, 'utils'),
     },
   },
   devServer: {

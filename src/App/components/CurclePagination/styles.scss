@@ -1,0 +1,34 @@
+@import 'src/styles/variables.scss';
+
+.pagination {
+  width: $container-size;
+  height: $container-size;
+  border-radius: 50%;
+  border: 1px solid rgba(66, 86, 122, 1);
+  box-sizing: border-box;
+  display: inline-block;
+  width: $container-size;
+  height: $container-size;
+  padding: calc($element-size / 2 - 2px);
+  margin: calc($element-size / 2 + 2px);
+
+  position: absolute;
+
+  
+  &__bullete {
+    transform-origin: calc(#{$container-size} / 2 + #{$element-size} / 2) 50%;
+  }
+}
+   
+@for $i from 1 through 6 {
+  .pagination .pagination__bullete:nth-child(#{$i}){
+    transform: translate(-50%, -50%) rotate(calc(360deg * ((#{$i} - 1) / 6)) )
+  }
+
+  .pagination .pagination__bullete:nth-child(#{$i}) div {
+    transform:  rotate(calc(-360deg * ((#{$i} - 1) / 6)));
+  }
+}
+
+
+  
