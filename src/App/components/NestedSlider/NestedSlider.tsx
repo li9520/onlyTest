@@ -3,28 +3,35 @@ import 'swiper/scss';
 import 'swiper/scss/pagination';
 import 'swiper/scss/navigation';
 import _ from 'lodash';
+import { eventType } from "src/config/types";
 
 import { Navigation } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
- import './nestedSlider.scss';
+import './nestedSlider.scss';
 
-const NestedSlider = ({events}) => {
+type nestedSliderProps = {
+  events: eventType[];
+}
+
+const swiperParams = {
+  nested: true,
+  slidesPerView: 3,
+  navigation: true,
+  spaceBetween: "80px",
+  modules: [Navigation]
+};
+
+const NestedSlider= ({events}: nestedSliderProps) => {
   return (
     <Swiper
-      nested={true}
-      slidesPerView={3}
-      navigation={true}
-      spaceBetween={"80px"}
-      modules={[Navigation]}
+    {...swiperParams}
       className="nestedSlider"
     >
-      {events.map((event) => {
-        const [year, text] = event;
+      {events.map(({year, event}) => {
         return (
-          
           <SwiperSlide key={_.uniqueId()}>
             <h2>{year}</h2>
-            <p>{text}</p>
+            <p>{event}</p>
           </SwiperSlide>
         )
       })}

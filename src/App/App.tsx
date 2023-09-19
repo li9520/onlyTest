@@ -8,7 +8,7 @@ import { useSlider } from 'src/hooks/useSlider';
 import { timeIntervals } from "src/config/data";
 
 const App = () => {
-  const { intervalsList, setIntervalsList } = useSlider();
+  const { setIntervalsList, intervalsList } = useSlider();
 
   useEffect(() => {
     setIntervalsList(timeIntervals);

@@ -3,9 +3,14 @@ import gsap from 'gsap';
 import './curclePagination.scss';
 import CurcleButton from "../CurcleButton";
 import { useSlider } from "src/hooks/useSlider";
+import { intervalType } from "src/config/types";
 
-const CurclePagination = ({ onClick,  points }) => {
-  const {selected} = useSlider();
+type curclePaginationProps = {
+  onClick: (id: number) => React.MouseEventHandler;
+  points: intervalType[];
+}
+const CurclePagination: React.FC<curclePaginationProps> = ({ onClick,  points }) => {
+  const { selected } = useSlider();
   const prevSelectedRef = React.useRef(selected);
   const appRef = useRef(null);
   const ctx = useRef();
@@ -29,7 +34,7 @@ const CurclePagination = ({ onClick,  points }) => {
   return (
     <div ref={appRef} className="pagination">
       {points.map(({ id, pointName, type}) => (
-        <CurcleButton key={id} onClick={onClick(id)} active={id === selected} type={type || ''} pointName={pointName} className={"pagination__bullete"} />
+        <CurcleButton key={id} onClick={onClick(id)} active={id === selected} pointName={pointName} className={"pagination__bullete"} />
       ))}
     </div>
   )

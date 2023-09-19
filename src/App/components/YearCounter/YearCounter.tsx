@@ -2,7 +2,12 @@ import React from 'react'
 
 import { useCounter } from 'src/hooks/useCounter'
 
-const YearCounter = ({
+type titleProps = {
+  value: number;
+  className: string,
+  defaultValue: number,
+}
+const YearCounter: React.FC<titleProps> = ({
   className,
   value,
   defaultValue,

@@ -1,9 +1,13 @@
 import React from "react";
-import cn from 'classnames';
+import cn, {Argument} from 'classnames';
 
 import './title.scss';
 
-const Title = ({text, classname}) => {
+type titleProps = {
+  text: string;
+  classname: Argument,
+}
+const Title: React.FC<titleProps> = ({text, classname}) => {
   const titleClasses = cn('title', classname)
   return (
     <h1 className={titleClasses}>{text}</h1>

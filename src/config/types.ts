@@ -1,5 +1,12 @@
-export type curcleItem = {
+export type eventType = {year: number, event: string};
+
+export type intervalType = {
   id: number,
-  title: string,
-  
-}
+  type?: string,
+  points:{
+    from: number,
+    to: number,
+  },
+  pointName: string,
+  events: eventType[],
+};

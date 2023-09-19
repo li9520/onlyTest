@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 
-export const useCounter = (value, defaultValue)=> {
-  const [counter, setCounter] = useState(defaultValue)
+export const useCounter = (value: number, defaultValue: number) : number=> {
+  const [counter, setCounter] = useState<number>(defaultValue)
   const duration = 20;
 
   useEffect(() => {

@@ -1,13 +1,19 @@
 import React from "react";
-import cn from 'classnames';
+import cn, {Argument} from 'classnames';
 
 import './curcleButton.scss';
 
-const CurcleButton = ({
+type curcleButtonProps = {
+  onClick: React.MouseEventHandler;
+  pointName: String,
+  active: Boolean,
+  className: Argument,
+};
+
+const CurcleButton: React.FC<curcleButtonProps> = ({
   onClick, 
   pointName, 
   active,
-  type,
   className
 }) => {
   const buttonClass = cn(
