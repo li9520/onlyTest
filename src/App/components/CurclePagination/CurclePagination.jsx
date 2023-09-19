@@ -1,6 +1,6 @@
 import React, { useLayoutEffect, useEffect, useRef } from "react";
 import gsap from 'gsap';
-import './styles.scss';
+import './curclePagination.scss';
 import CurcleButton from "../CurcleButton";
 import { useSlider } from "src/hooks/useSlider";
 
@@ -28,8 +28,8 @@ const CurclePagination = ({ onClick,  points }) => {
 
   return (
     <div ref={appRef} className="pagination">
-      {points.map(({ id, pointName }) => (
-        <CurcleButton key={id} onClick={onClick(id)} active={id === selected} pointName={pointName} className={"pagination__bullete"} />
+      {points.map(({ id, pointName, type}) => (
+        <CurcleButton key={id} onClick={onClick(id)} active={id === selected} type={type || ''} pointName={pointName} className={"pagination__bullete"} />
       ))}
     </div>
   )

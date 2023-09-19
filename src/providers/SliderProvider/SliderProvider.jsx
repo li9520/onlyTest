@@ -1,6 +1,5 @@
 import React, { useEffect,  useState } from "react";
 import { SliderContext } from "src/contexts";
-import { timeIntervals } from "src/config/data";
 
 const initSelected = 2;
 
@@ -10,11 +9,7 @@ const SliderProvider = ({children}) => {
   const [countTo, setCountTo] = useState();
   const [intervalsList, setIntervalsList] = useState([]);
 
-  useEffect(() => {
-    setIntervalsList(timeIntervals);
-  },[])
-
-  const value = {selected, setSelected, countFrom, setCountFrom, countTo, setCountTo, intervalsList};
+  const value = {selected, setSelected, countFrom, setCountFrom, countTo, setCountTo, intervalsList, setIntervalsList};
 
   return (
     <SliderContext.Provider value={value}>

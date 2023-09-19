@@ -9,8 +9,7 @@
   display: inline-block;
   width: $container-size;
   height: $container-size;
-  padding: calc($element-size / 2 - 2px);
-  margin: calc($element-size / 2 + 2px);
+  margin-top: 45px;//calc($element-size / 2 + 2px);
 
   position: absolute;
 
@@ -25,7 +24,7 @@
     transform: translate(-50%, -50%) rotate(calc(360deg * ((#{$i} - 1) / 6)) )
   }
 
-  .pagination .pagination__bullete:nth-child(#{$i}) div {
+  .pagination .pagination__bullete:nth-child(#{$i}) > div {
     transform:  rotate(calc(-360deg * ((#{$i} - 1) / 6)));
   }
 }

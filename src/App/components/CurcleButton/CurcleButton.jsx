@@ -1,12 +1,13 @@
 import React from "react";
 import cn from 'classnames';
 
-import './styles.scss';
+import './curcleButton.scss';
 
 const CurcleButton = ({
   onClick, 
   pointName, 
   active,
+  type,
   className
 }) => {
   const buttonClass = cn(
@@ -20,7 +21,7 @@ const CurcleButton = ({
         className={buttonClass}
     >
       <div className="curcleButton__content">
-        {<p>{pointName}</p>}
+        <div>{pointName}</div>
       </div>
     </div>
   )
