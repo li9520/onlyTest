@@ -2,6 +2,7 @@
 
 .menu {
   position: relative;
+  box-sizing: border-box;
   min-height: 530px;
   display: flex;
   justify-content: center;
@@ -88,13 +89,15 @@
 
 @media screen and (max-width: 640px) {
   .menu {
-    min-height: 186px;
+    height: 184px;
+    min-height: auto;
     gap: 30px;
     border-bottom: 1px solid $grey;
-    margin-bottom: 0;
+    padding: 0;
     &__text {
       font-size: 56px;
       line-height: 72.46px;
+      margin: 0;
     }
   }
 } 
