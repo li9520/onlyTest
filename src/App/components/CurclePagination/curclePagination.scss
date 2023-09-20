@@ -1,5 +1,5 @@
 @import 'src/styles/variables.scss';
-
+$rotateDeg: 120deg;
 .pagination {
   width: $container-size;
   height: $container-size;
@@ -10,6 +10,7 @@
   width: $container-size;
   height: $container-size;
   margin-top: 45px;//calc($element-size / 2 + 2px);
+  transform: rotate($rotateDeg);
 
   position: absolute;
 
@@ -27,7 +28,7 @@
     }
 
     .pagination .pagination__bullete:nth-child(#{$j}):nth-last-child(#{$i}) > div {
-      transform:  rotate(calc(-360deg / (#{$j} + #{$i} - 1) * (#{$j} - 1)));
+      transform:  rotate(calc(-360deg / (#{$j} + #{$i} - 1) * (#{$j} - 1) - $rotateDeg));
     }
   }
 }

@@ -8,13 +8,13 @@ import Slider from './components/SliderWrapper';
 import Title from './components/Title';
 import './app.scss';
 
-const defaultSelected = 2;
+const defaultSelected = 0;
 const App = () => {
   const { setIntervalsList, intervalsList, changeSelected } = useSlider();
 
   useEffect(() => {
     setIntervalsList(timeIntervals);
-    changeSelected(timeIntervals.length < 3 ? 1 : defaultSelected);
+    changeSelected(defaultSelected);
   }, []);
 
   if (intervalsList.length === 0) return null;
