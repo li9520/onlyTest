@@ -1,6 +1,5 @@
 @import 'src/styles/variables.scss';
 .sliderWrapper {
-  position: static;
   overflow: visible;
   &__button-next,
   &__button-prev {
@@ -13,21 +12,36 @@
     border-radius: 50%;
     z-index: 10;
     cursor: pointer;
-    border: 2px solid $blackBlue;
+    border: 1px solid $borderBullete;
   }
-    
+    .swiper-pagination{
+      display: none;
+      
+      .swiper-pagination-bullet {
+        background-color: $blackBlue;
+        opacity: 0.4;
+        width: 6px;
+        height: 6px;
+      }
+      .swiper-pagination-bullet-active{
+        opacity: 1;
+      }
+      @media screen and (max-width: 640px) {
+        display: block;
+      }
+    }
     &__button-prev svg,
     &__button-next svg{
       height: 12.5px;
     }
 
     &__button-next{
-      top: 565px;
+      top: -56px;
       left: 70px;
     }
 
     &__button-prev{
-      top: 565px;
+      top:-56px;
       transform: rotate(180deg);
       left: 0;
     }
@@ -37,10 +51,40 @@
       color: #42567A;
       position: absolute;
       left: 0;
-      top: 527px;
+      top: -86px;
     }
   }
 
   .swiper-button-disabled{
     opacity: 0.5;
+  }
+
+  @media screen and (max-width: 640px) {
+    .sliderWrapper  {
+      position: static;
+      .swiper-pagination{
+        bottom: 32px;
+      }
+      &__button-next,
+      &__button-prev {
+        width: 25px;
+        height: 25px;
+        bottom: 13px;
+        top:auto
+      } 
+
+      &__button-next {
+        left: 40px;
+      }
+
+      &__button-prev svg,
+      &__button-next svg{
+        height: 6.25px;
+      }
+
+      &__fraction{
+        top: auto;
+        bottom: 55px;
+      }
+    }
   }

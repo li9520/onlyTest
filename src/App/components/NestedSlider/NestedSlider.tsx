@@ -15,10 +15,23 @@ type nestedSliderProps = {
 
 const swiperParams = {
   nested: true,
-  slidesPerView: 3,
+  slidesPerView: 2,
   navigation: true,
-  spaceBetween: '80px',
+  spaceBetween: 25,
   modules: [Navigation],
+  breakpoints: {
+    1920: {
+      slidesPerView: 4,
+    },
+    1280: {
+      slidesPerView: 3,
+      spaceBetween: 40,
+    },
+    800: {
+      slidesPerView: 3,
+      spaceBetween: 30,
+    },
+  },
 };
 
 const NestedSlider = ({ events }: nestedSliderProps) => {

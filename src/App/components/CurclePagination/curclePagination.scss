@@ -1,15 +1,12 @@
 @import 'src/styles/variables.scss';
 $rotateDeg: 120deg;
 .pagination {
-  width: $container-size;
-  height: $container-size;
   border-radius: 50%;
   border: 1px solid $blackBlue;
   box-sizing: border-box;
   display: inline-block;
   width: $container-size;
   height: $container-size;
-  margin-top: 45px;//calc($element-size / 2 + 2px);
   transform: rotate($rotateDeg);
 
   position: absolute;
@@ -18,6 +15,9 @@ $rotateDeg: 120deg;
   &__bullete {
     transform-origin: calc(#{$container-size} / 2 + #{$element-size} / 2) 50%;
   }
+  @media screen and (max-width: 640px) {
+    display: none;
+  } 
 }
 
    
@@ -29,6 +29,17 @@ $rotateDeg: 120deg;
 
     .pagination .pagination__bullete:nth-child(#{$j}):nth-last-child(#{$i}) > div {
       transform:  rotate(calc(-360deg / (#{$j} + #{$i} - 1) * (#{$j} - 1) - $rotateDeg));
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .pagination {
+    width: $container-medium-size;
+    height: $container-medium-size;
+
+    &__bullete {
+      transform-origin: calc(#{$container-medium-size} / 2 + #{$element-medium-size} / 2) 50%;
     }
   }
 }

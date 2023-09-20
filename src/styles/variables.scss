@@ -1,8 +1,12 @@
 $container-size: 530px;
+$container-medium-size: 380px;
 $element-size: 56px;
+$element-medium-size: 45px;
 $point-size: 6px;
 
 $content-margin: 78px;
+$content-medium-margin: 60px;
+$content-mobile-margin: 20px;
 
 // colors
 $blue: #3877EE;
@@ -13,4 +17,7 @@ $borderColor: rgba(48, 62, 88, 0.5);
 $bgColor: rgba(244, 245, 249, 1);
 $white: #ffffff;
 $shadowColor: #3877EE1A;
+$grey: #C7CDD9;
+$borderBullete: rgba(66, 86, 122, 0.5)
+
 

@@ -7,7 +7,7 @@ import 'swiper/scss/navigation';
 
 import './sliderWrapper.scss';
 import { useSlider } from 'src/hooks/useSlider';
-import { Navigation, EffectFade } from 'swiper/modules';
+import { Navigation, EffectFade, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide, SwiperRef } from 'swiper/react';
 
 import { SliderBtnIcon } from './icons';
@@ -41,7 +41,10 @@ const SliderWrapper = () => {
       nextEl: '.sliderWrapper__button-next',
       prevEl: '.sliderWrapper__button-prev',
     },
-    modules: [Navigation, EffectFade],
+    pagination: {
+      clickable: true,
+    },
+    modules: [Navigation, EffectFade, Pagination],
     effect: 'fade',
     fadeEffect: {
       crossFade: true,

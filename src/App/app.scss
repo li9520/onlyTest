@@ -7,28 +7,13 @@
     width: 100%;
     min-height: 100vh;
     box-sizing: border-box;
-    padding-top: 170px;
-    padding-bottom: 100px;
     border-left: 1px solid rgba(66, 86, 122, 0.1);
     border-right: 1px solid rgba(66, 86, 122, 0.1);
     overflow: hidden;
-    
-    @media screen and (max-width: 640px) {
-      padding-top: 40px;
-      padding-bottom: 40px;
-    }
-    
-    @media screen and (max-width: 420px) {
-      padding-top: 20px;
-      padding-bottom: 20px;
-    }
-
-    
+    padding: 170px $content-margin 100px $content-margin;
   }
 
   &__content {
-    margin-left: $content-margin;
-    margin-right: $content-margin;
     height: 100%;
     position: relative;
   }
@@ -51,8 +36,54 @@
     opacity: 10%;
     z-index: -1;
 
-    @media screen and (max-width: 640px) {
+    @media screen and (max-width: 1260px) {
       display: none;
+    }
+  }
+}
+
+
+@media screen and (max-width: 1440px) {
+  .app {
+    &__container {
+      max-width: auto;
+      padding-top: 90px;
+      padding-bottom: 50px;
+      width: 100%;
+      border: none;
+    }
+  }
+}
+@media screen and (max-width: 1260px) {
+  .app__container {
+    padding-left: $content-medium-margin;
+    padding-left: $content-medium-margin;
+  }
+  .app__title{
+    position: static;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .app__container {
+    padding-top: 90px;
+    padding-bottom: 50px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .app {
+    &__container {
+      padding: 60px $content-mobile-margin 13px $content-mobile-margin;
+      padding-top: 60px;
+      padding-bottom: 13px;
+    }
+    &__content{
+      height: 90vh;
+    }
+
+    &__title{
+      position: static;
     }
   }
 }

@@ -18,8 +18,34 @@
     background: linear-gradient(180deg, $blue -5%, $fuschia 85%);
     height: auto;
 
-    @media screen and (max-width: 640px) {
+    @media screen and (max-width: 1440px) {
       display: none;
     }
   } 
+}
+
+
+@media screen and (max-width: 1240px) {
+  .title {
+    font-size: 48px;
+    line-height: 1.2em;
+    width: 100px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .title {
+    font-size: 32px;
+    line-height: 1.2em;
+    width: 80px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .title {
+    font-size: 20px;
+    line-height: 24px;
+    width: 123px;
+    height: 48px;
+  }
 }

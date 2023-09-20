@@ -4,9 +4,10 @@
 $nestedButton-size: 40px;
 
 .nestedSlider {
-  overflow: visible;
+
   .swiper-button-next,
   .swiper-button-prev{
+    position: fixed;
     width: $nestedButton-size;
     height: $nestedButton-size;
     background-color: $white; 
@@ -40,5 +41,39 @@ $nestedButton-size: 40px;
     color:  $blue;
     font-family: 'Bebas Neue', sans-serif;
     font-weight: 400;
+  }
+
+  p{
+    font-size: 20px;
+    line-height: 30px;
+  }
+}
+
+
+@media screen and (max-width: 1260px) {
+  .nestedSlider .swiper-button-next{
+    right: - calc($content-medium-margin / 2 + $nestedButton-size / 2);
+  }
+
+  .nestedSlider .swiper-button-prev{
+    left: - calc($content-medium-margin / 2 + $nestedButton-size / 2);
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .nestedSlider {
+    h2{
+      font-size: 16px;
+      line-height: 19.2px;
+    }
+
+    p{
+      font-size: 14px;
+      line-height: 20.3px;
+    }
+    .swiper-button-next,
+    .swiper-button-prev{
+      display: none;
+    }
   }
 }

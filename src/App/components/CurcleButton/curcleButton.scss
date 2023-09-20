@@ -54,3 +54,10 @@
     @include activeEl();
   }
 }
+
+@media screen and (max-width: 1024px) {
+  .curcleButton {
+    width: $element-medium-size;
+    height: $element-medium-size;
+  }
+}
