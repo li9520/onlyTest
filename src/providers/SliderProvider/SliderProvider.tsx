@@ -1,25 +1,33 @@
-import React, { useState, ReactNode} from "react";
-import { intervalType } from "src/config/types";
-import { SliderContext } from "src/contexts";
+import React, { useState, ReactNode } from 'react';
 
-const initSelected = 2;
+import { intervalType } from 'src/config/types';
+import { SliderContext } from 'src/contexts';
 
 type SliderProviderProps = {
-  children : ReactNode,
-}
-const SliderProvider = ({children}: SliderProviderProps) => {
-  const [selected, setSelected] = useState<number>(initSelected);
+  children: ReactNode;
+};
+const SliderProvider = ({ children }: SliderProviderProps) => {
+  const [selected, setSelected] = useState<number>(0);
   const [countFrom, setCountFrom] = useState<number>(0);
   const [countTo, setCountTo] = useState<number>(0);
   const [intervalsList, setIntervalsList] = useState<intervalType[] | []>([]);
 
-  const value = {selected,countTo, countFrom, intervalsList, setSelected, setCountFrom, setCountTo, setIntervalsList };
+  const changeSelected = (value: number) => {
+    setSelected(value);
+    setCountFrom(intervalsList[value]?.points.from);
+    setCountTo(intervalsList[value]?.points.to);
+  };
 
-  return (
-    <SliderContext.Provider value={value}>
-      {children}
-    </SliderContext.Provider>
-  );
-}
+  const value = {
+    selected,
+    countTo,
+    countFrom,
+    intervalsList,
+    changeSelected,
+    setIntervalsList,
+  };
+
+  return <SliderContext.Provider value={value}>{children}</SliderContext.Provider>;
+};
 
 export default SliderProvider;

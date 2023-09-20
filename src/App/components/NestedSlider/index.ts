@@ -1,1 +1,1 @@
-export {default} from './NestedSlider';
+export { default } from './NestedSlider';

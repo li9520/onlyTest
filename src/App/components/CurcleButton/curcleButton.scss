@@ -1,9 +1,8 @@
 @import 'src/styles/variables.scss';
 
 @mixin activeEl {
-
-  background-color: rgba(244, 245, 249, 1);
-  border: 1px solid rgba(48, 62, 88, 0.5);
+  background-color: $bgColor;
+  border: 1px solid $borderColor;
 
 
 .curcleButton__content {
@@ -28,18 +27,17 @@
   box-sizing: border-box;
   border-radius: 50%;
   position: absolute;
-  //overflow-x: hidden;
   left: 0;
   top: 50%;
 
   &__content {
-    background-color: rgba(66, 86, 122, 1);
+    background-color: $blackBlue;
     height: $point-size;
     width: $point-size;
     border-radius: 50%;
 
     div{
-      color: rgba(66, 86, 122, 1);
+      color: $blackBlue;
       margin: 0;
       font-size: 20px;
       font-weight: 400;

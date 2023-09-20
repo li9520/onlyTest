@@ -1,18 +1,21 @@
-import React, {useEffect} from "react";
+import React, { useEffect } from 'react';
 
-import Menu from "./components/Menu"
-import Title from "./components/Title";
-import './app.scss';
-import Slider from "./components/SliderWrapper";
+import { timeIntervals } from 'src/config/data';
 import { useSlider } from 'src/hooks/useSlider';
-import { timeIntervals } from "src/config/data";
 
+import Menu from './components/Menu';
+import Slider from './components/SliderWrapper';
+import Title from './components/Title';
+import './app.scss';
+
+const defaultSelected = 2;
 const App = () => {
-  const { setIntervalsList, intervalsList } = useSlider();
+  const { setIntervalsList, intervalsList, changeSelected } = useSlider();
 
   useEffect(() => {
     setIntervalsList(timeIntervals);
-  },[]);
+    changeSelected(timeIntervals.length < 3 ? 1 : defaultSelected);
+  }, []);
 
   if (intervalsList.length === 0) return null;
   return (
@@ -25,7 +28,7 @@ const App = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default App;

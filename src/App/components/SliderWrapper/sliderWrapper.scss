@@ -1,8 +1,9 @@
+@import 'src/styles/variables.scss';
 .sliderWrapper {
   position: static;
   overflow: visible;
-  .swiperbutton-next,
-  .swiperbutton-prev {
+  &__button-next,
+  &__button-prev {
     position: absolute;
     display: flex;
     justify-content: center;
@@ -12,36 +13,34 @@
     border-radius: 50%;
     z-index: 10;
     cursor: pointer;
-    border: 2px solid rgba(66, 86, 122, 0.5);
+    border: 2px solid $blackBlue;
+  }
     
-    
+    &__button-prev svg,
+    &__button-next svg{
+      height: 12.5px;
+    }
+
+    &__button-next{
+      top: 565px;
+      left: 70px;
+    }
+
+    &__button-prev{
+      top: 565px;
+      transform: rotate(180deg);
+      left: 0;
+    }
+
+    &__fraction{
+      font-size: 14px;
+      color: #42567A;
+      position: absolute;
+      left: 0;
+      top: 527px;
+    }
   }
 
   .swiper-button-disabled{
     opacity: 0.5;
   }
-
-  .swiperbutton-next svg,
-  .swiperbutton-prev svg {
-    height: 12.5px;
-  }
-
-  .swiperbutton-next{
-    top: 565px;
-    left: 70px;
-  }
-
-  .swiperbutton-prev{
-    top: 565px;
-    transform: rotate(180deg);
-    left: 0;
-  }
-
-  .swiperFraction {
-    font-size: 14px;
-    color: #42567A;
-    position: absolute;
-    left: 0;
-    top: 527px;
-  }
-}

@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=PT+Sans:wght@400;700&family=Passion+One&display=swap');
 @import 'src/styles/variables.scss';
 
 $nestedButton-size: 40px;
@@ -8,9 +9,9 @@ $nestedButton-size: 40px;
   .swiper-button-prev{
     width: $nestedButton-size;
     height: $nestedButton-size;
-    background-color: #ffffff; 
+    background-color: $white; 
     border-radius: 50%;
-    box-shadow: 0px 0px 15px 0px #3877EE1A;
+    box-shadow: 0px 0px 15px 0px $shadowColor;
     z-index: 1000000;
 
   }
@@ -25,11 +26,19 @@ $nestedButton-size: 40px;
 
   .swiper-button-next::after,
   .swiper-button-prev::after {
-    color:rgba(66, 86, 122, 1);
+    color:$blackBlue;
     font-size: 12.5px;
   }
   
   .swiper-button-disabled {
     display: none;
   }  
+
+  h2{
+    size: 25px;
+    line-height: 30px;
+    color:  $blue;
+    font-family: 'Bebas Neue', sans-serif;
+    font-weight: 400;
+  }
 }

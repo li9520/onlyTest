@@ -4,7 +4,7 @@
   width: $container-size;
   height: $container-size;
   border-radius: 50%;
-  border: 1px solid rgba(66, 86, 122, 1);
+  border: 1px solid $blackBlue;
   box-sizing: border-box;
   display: inline-block;
   width: $container-size;
@@ -18,16 +18,22 @@
     transform-origin: calc(#{$container-size} / 2 + #{$element-size} / 2) 50%;
   }
 }
+
    
 @for $i from 1 through 6 {
-  .pagination .pagination__bullete:nth-child(#{$i}){
-    transform: translate(-50%, -50%) rotate(calc(360deg * ((#{$i} - 1) / 6)) )
-  }
+  @for $j from 1 through 6 {
+    .pagination .pagination__bullete:nth-child(#{$j}):nth-last-child(#{$i}){
+      transform: translate(-50%, -50%) rotate(calc(360deg / (#{$j} + #{$i} - 1) * (#{$j} - 1)) )
+    }
 
-  .pagination .pagination__bullete:nth-child(#{$i}) > div {
-    transform:  rotate(calc(-360deg * ((#{$i} - 1) / 6)));
+    .pagination .pagination__bullete:nth-child(#{$j}):nth-last-child(#{$i}) > div {
+      transform:  rotate(calc(-360deg / (#{$j} + #{$i} - 1) * (#{$j} - 1)));
+    }
   }
 }
+
+
+
 
 
   

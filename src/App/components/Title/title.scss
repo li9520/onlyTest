@@ -1,7 +1,6 @@
 @import 'src/styles/variables.scss';
 .title {
-  color: 
-  rgba(66, 86, 122, 1);
+  color: $blackBlue;
   font-weight: 700;
   font-size: 56px;
   line-height: 67.2px;
@@ -16,7 +15,7 @@
     right: 0;
     bottom: 0;
     width: 5px;
-    background: linear-gradient(180deg, #3877ee -5%, #ef5da8 85%);
+    background: linear-gradient(180deg, $blue -5%, $fuschia 85%);
     height: auto;
 
     @media screen and (max-width: 640px) {
