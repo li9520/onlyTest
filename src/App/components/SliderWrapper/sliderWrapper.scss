@@ -61,6 +61,7 @@
 
   @media screen and (max-width: 640px) {
     .sliderWrapper  {
+      min-height: 260px;
       position: static;
       .swiper-pagination{
         bottom: 32px;
