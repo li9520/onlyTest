@@ -14,8 +14,8 @@ const SliderProvider = ({ children }: SliderProviderProps) => {
 
   const changeSelected = (value: number) => {
     setSelected(value);
-    setCountFrom(intervalsList[value]?.points.from);
-    setCountTo(intervalsList[value]?.points.to);
+    setCountFrom(intervalsList.filter(({ id }) => id === value)[0]?.points.from);
+    setCountTo(intervalsList.filter(({ id }) => id === value)[0]?.points.to);
   };
 
   const value = {
