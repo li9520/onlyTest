@@ -6,7 +6,6 @@ import { useSlider } from 'hooks/useSlider';
 import { intervalType } from 'src/config/types';
 
 import CurcleButton from '../CurcleButton';
-import { findIndex } from 'lodash';
 
 type curclePaginationProps = {
   onClick: (id: number) => React.MouseEventHandler;
